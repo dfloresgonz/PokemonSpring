@@ -15,8 +15,9 @@ public class MySqlDao implements IDao{
     
     @Override
     public int insertarPokemon(Pokemon pokemon) {
+        String sql = "INSERT INTO pokedex VALUES (?, ?, ?, ?)";
         return jdbcTemplate.update(
-                "INSERT INTO pokedex VALUES (?, ?, ?, ?)",
+                sql,
                 pokemon.getNombrePokemon(),
                 pokemon.getTipoPokemon(),
                 pokemon.getAtaque(),
