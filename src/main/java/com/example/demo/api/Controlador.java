@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controlador {
     
-    private final Servicio servicio;//
+    private final Servicio servicio;
 
     @Autowired
     public Controlador(Servicio servicio) {
