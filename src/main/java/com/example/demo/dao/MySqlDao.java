@@ -27,7 +27,8 @@ public class MySqlDao implements IDao{
 
     @Override
     public Optional<Pokemon> getPokemon(String nombre) {
-        return jdbcTemplate.queryForObject("SELECT * FROM pokedex WHERE nombre = ?",
+        String sql = "SELECT * FROM pokedex WHERE nombre = ?";
+        return jdbcTemplate.queryForObject(sql,
                 new Object[]{nombre},
                 (rs, rowNum) -> 
                     Optional.of(
